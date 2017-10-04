@@ -4,12 +4,12 @@ import { FormsModule }         from '@angular/forms';
 import { TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import { AwesomePipe }         from './awesome.pipe';
 import { HighlightDirective }  from './highlight.directive';
-
+import { ChartsModule } from 'ng2-charts';
 @NgModule({
   imports:      [ CommonModule ],
   declarations: [ AwesomePipe, HighlightDirective ],
   exports:      [ AwesomePipe, HighlightDirective,
-                  CommonModule, FormsModule,TranslateModule ]
+                  CommonModule, FormsModule,TranslateModule, ChartsModule ]
 })
 export class SharedModule { 
 
