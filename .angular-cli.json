@@ -22,7 +22,8 @@
         "scss/style.scss"
       ],
       "scripts": [
-        "../node_modules/chart.js/dist/Chart.min.js"
+        "../node_modules/chart.js/dist/Chart.min.js",
+        "assets/js/autobahn-0.8.2.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

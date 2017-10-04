@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+declare var ab: any;
 
 @Component({
   selector: 'app-portal',
@@ -24,6 +25,24 @@ export class PortalComponent implements OnInit {
 
   onChartClick(event) {
     console.log(event);
+
+    ab.connect(
+        'ws://0.0.0.0:8482',
+        function (session) {
+            console.log('connected to websocket server.');
+
+            session.subscribe('race', function (topic, event) {
+                console.log('race updated', topic, event);
+            });
+
+            session.subscribe('player-error', function (topic, event) {
+                console.log('someone could made a mistake', topic, event);
+            });
+        },
+        function (code, reason, detail) {
+            console.warn(code, reason, detail);
+        }
+    );
   }
 
 }
